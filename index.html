@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flappy Bird (Mobile)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Flappy ID Bird</h1>
+        
+        <div id="tela-id" class="screen">
+            <h2>Identificação de Usuário</h2>
+            <p>Insira seu ID (3 caracteres):</p>
+            <input type="text" id="inputId" maxlength="3" placeholder="Ex: ABC" required>
+            <p id="mensagemId" class="error-message"></p>
+            <button onclick="validarIDParaJogo()">Iniciar Jogo</button>
+            <button onclick="mostrarRanking()">Ver Ranking</button>
+        </div>
+
+        <div id="tela-inicio" class="screen hidden">
+            <h2>Bem-vindo, <span id="idUsuarioDisplayInicio"></span>!</h2>
+            <p>Toque na tela ou clique para pular.</p>
+            <button onclick="iniciarJogoFlappy()">Começar</button>
+            <button onclick="mostrarRanking()">Ver Ranking</button>
+            <button onclick="sairDoJogoFlappy()">Sair</button>
+        </div>
+
+        <div id="tela-jogo" class="screen hidden">
+            <p class="score-display">Pontos: <span id="pontuacaoFlappy">0</span></p>
+            <canvas id="gameCanvas" width="320" height="480"></canvas>
+        </div>
+
+        <div id="tela-gameover" class="screen hidden">
+            <h2>Game Over, <span id="idUsuarioDisplayGameOver"></span>!</h2>
+            <p>Sua pontuação final foi: <span id="pontuacaoFinal">0</span></p>
+            <p>Melhor pontuação para <span id="idUsuarioDisplayRecorde"></span>: <span id="recordeUsuario">0</span></p>
+            <button onclick="reiniciarJogoFlappy()">Jogar Novamente</button>
+            <button onclick="mostrarRanking()">Ver Ranking</button>
+            <button onclick="sairDoJogoFlappy()">Sair</button>
+        </div>
+
+        <div id="tela-ranking" class="screen hidden">
+            <h2>Ranking Global</h2>
+            <div id="ranking-lista">
+                </div>
+            <button onclick="voltarParaIDFlappy()">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
