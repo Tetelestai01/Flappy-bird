@@ -1,0 +1,164 @@
+body {
+    font-family: 'Press Start 2P', cursive; /* Fonte retrô, se tiver importado */
+    background-color: #70c5ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Esconde barras de rolagem */
+    user-select: none; /* Impede seleção de texto */
+    -webkit-tap-highlight-color: transparent; /* Remove destaque de toque no mobile */
+}
+
+.game-container {
+    background-color: #38b4c7;
+    border: 5px solid #555;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    padding: 10px;
+    position: relative;
+    width: 100%; /* Ajusta para largura total em mobile */
+    max-width: 340px; /* Largura máxima para desktops */
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #ffd700;
+    text-shadow: 2px 2px #da8c00;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #ffeb3b;
+    text-shadow: 1px 1px #ccaa00;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.screen {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 80%;
+    max-width: 200px;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 80%;
+    max-width: 250px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+#tela-id button:first-of-type { /* Botão Iniciar Jogo */
+    background-color: #007bff;
+}
+#tela-id button:first-of-type:hover {
+    background-color: #0069d9;
+}
+
+#tela-gameover button:first-of-type { /* Jogar Novamente */
+    background-color: #28a745;
+}
+#tela-gameover button:first-of-type:hover {
+    background-color: #218838;
+}
+
+#tela-gameover button:last-of-type,
+#tela-inicio button:last-of-type { /* Sair */
+    background-color: #dc3545;
+}
+#tela-gameover button:last-of-type:hover,
+#tela-inicio button:last-of-type:hover {
+    background-color: #c82333;
+}
+
+canvas {
+    background-color: #87ceeb; /* Cor do céu */
+    border: 2px solid #555;
+    display: block; /* Remove espaço extra abaixo do canvas */
+    margin: 0 auto;
+    touch-action: manipulation; /* Melhora a resposta ao toque */
+}
+
+.score-display {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+    text-shadow: 1px 1px #ccaa00;
+}
+
+.error-message {
+    color: #ffdddd;
+    font-size: 0.8em;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+/* Estilos do Ranking */
+#tela-ranking table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#tela-ranking th, #tela-ranking td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.9em;
+}
+#tela-ranking th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+#tela-ranking tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Importar fonte do Google Fonts (opcional, para visual retrô) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
